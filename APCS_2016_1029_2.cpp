@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    int n, m, tmp, msum;
+    int n, m, tmp, msum = 0;
     vector<int> v;
     vector<int> a;
     cin >> n >> m;
@@ -14,11 +14,11 @@ int main()
             cin >> tmp;
             v.push_back(tmp);
         }
-        for (int s = (int)v.size() - 1; s > 0; s--)
+        for (int s = 0; s < (int)v.size() - 1; s++)
         {
-            for (int a = 0; a <= s - 1; a++)
+            for (int a = 0; a < s - 1 - i; a++)
             {
-                if (v[a] < v[j + 1])
+                if (v[a] > v[a + 1])
                 {
                     int tmp1 = v[a];
                     v[a] = v[a + 1];
@@ -26,13 +26,13 @@ int main()
                 }
             }
         }
-        sum += v[0];
-        a.push_back(v[0]);
+        msum += v[(int)v.size() - 1];
+        a.push_back(v[(int)v.size() - 1]);
     }
-    cout << sum << endl;
-    for (int i = n - 1; i > 0; i--)
+    cout << msum << endl;
+    for (int i = (int)a.size() - 1; i > 0; i--)
     {
-        if (sum % a[i] == 0)
+        if (msum % a[i] == 0)
         {
             cout << a[i] << " ";
         }
@@ -41,10 +41,9 @@ int main()
             a.pop_back();
         }
     }
-    if (a.empty() == 0)
+    if (a.empty() == 1)
     {
         cout << -1;
     }
-    cout << endl;
     return 0;
 }
