@@ -34,7 +34,7 @@ int main()
     {
         for (int i = 0; i <= (int)v.size() - 1; i++)
         {
-            if (v[(int)v.size() - 1] <= 60)
+            if (v[(int)v.size() - 1] < 60)
             {
                 cout << v[(int)v.size() - 1] << endl;
                 break;
@@ -46,7 +46,7 @@ int main()
             }
         }
     }
-    if (v[(int)v.size() - 1] <= 60)
+    if (v[(int)v.size() - 1] < 60)
     {
         cout << "worst case" << endl;
     }
