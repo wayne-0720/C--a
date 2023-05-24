@@ -12,17 +12,22 @@ int main()
     for (int i = 1; i <= n; i++)
     {
         cin >> tmp1 >> tmp2;
-        v.push_back(tmp1);
-        v.push_back(tmp2);
+        if (l.count(tmp1) == 0)
+            v.push_back(tmp1);
+        if (l.count(tmp2) == 0)
+            v.push_back(tmp2);
         for (int j = tmp1; j < tmp2; j++)
         {
             l[j] = 1;
         }
     }
     sort(v.begin(), v.end());
-    for (int i = v[0]; i < v[(int)v.size() - 1]; i++)
+    for (auto &it : l)
     {
-        sum += l[i];
+        if (it.second == 0)
+            continue;
+        else
+            sum++;
     }
     cout << sum << endl;
     return 0;
