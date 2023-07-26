@@ -2,9 +2,13 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+bool mycompare(int a, int b)
+{
+    return a > b;
+}
 int main()
 {
-    int n, k, np = 0;
+    int n, k, np = 0, a;
     vector<int> v;
     cin >> n >> k;
     for (int i = 0; i < n; i++)
@@ -13,9 +17,9 @@ int main()
         cin >> tmp;
         v.push_back(tmp);
     }
-    sort(v.begin(), v.end());
+    sort(v.begin(), v.end(), mycompare);
     np = k;
-    for (int i = k - 1; i < v.size(); i++)
+    for (int i = k; i < v.size(); i++)
     {
         if (v[0] <= 0)
         {
@@ -24,17 +28,60 @@ int main()
         }
         if (v[k - 1] == v[i])
         {
-            np += 1;
+            np++;
         }
         else
         {
             break;
         }
     }
-    if (v[k - 1] == v[v.size() - 1] && v[0] > 0)
+    if (v[0] == 0)
     {
-        np--;
+        np = 0;
     }
+    else if (v[np] == 0)
+    {
+        np = np;
+    }
+    else if (np == n)
+    {
+        a = np - 1;
+        for (int i = a; i >= 0; i--)
+        {
+            if (v[0] <= 0)
+            {
+                break;
+            }
+            else if (v[i] == 0)
+            {
+                np--;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    else
+    {
+        a = np;
+        for (int i = a; i >= 0; i--)
+        {
+            if (v[0] <= 0)
+            {
+                break;
+            }
+            else if (v[i] == 0)
+            {
+                np--;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
     cout << np << endl;
     return 0;
 }
