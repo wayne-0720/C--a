@@ -4,6 +4,29 @@
         "iostream": "cpp",
         "ostream": "cpp"
     },
+        "C_Cpp.autocomplete": "Default",
+    "[cpp]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "[c]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on"
+    },
+    "C_Cpp.codeAnalysis.exclude": {
+   
+    },
+    "settingsSync.ignoredExtensions": []
     "background.interval": 30,
     "background.useFront": false,
     "background.fullscreen": {
