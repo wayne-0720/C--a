@@ -1,21 +1,25 @@
 #include <bits/stdc++.h>
-#include <vector>
-#include<algorithm>
 using namespace std;
+long long a, b, c, d, e, f;
 int main()
 {
-    int s1, s2, s3;
-    cin >> s1 >> s2 >> s3;
-    if (s2 * s2 + s3 * s3 == s1 * s1)
-    {
-        cout << "right" << endl;
-    }
-    else if (s2 * s2 + s3 * s3 > s1 * s1)
-    {
-        cout << "Acute" << endl;
-    }
+    cin >> d >> e >> f;
+    a = min({d, e, f});
+    c = max({d, e, f});
+    b = d + e + f - a - c;
+    cout << a << " " << b << " " << c << "\n";
+    if (a + b <= c)
+        cout << "No";
     else
     {
-        cout << "Obtuse" << endl;
+        a *= a;
+        b *= b;
+        c *= c;
+        if (a + b < c)
+            cout << "Obtuse";
+        else if (a + b == c)
+            cout << "Right";
+        else
+            cout << "Acute";
     }
 }
