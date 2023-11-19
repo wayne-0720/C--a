@@ -27,7 +27,7 @@
 
     },
     "settingsSync.ignoredExtensions": []
-    "background.interval": 30,
+    "background.interval": 60,
     "background.useFront": false,
     "background.fullscreen": {
         "images": [
@@ -128,6 +128,7 @@
         "opacity": 0.75,
         "size": "cover",
         "position": "center",
-        "interval": 30
+        "interval": 60
+
     }
 }
