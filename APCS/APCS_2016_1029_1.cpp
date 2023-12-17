@@ -1,25 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
-long long a, b, c, d, e, f;
+#define ll long long
 int main()
 {
-    cin >> d >> e >> f;
-    a = min({d, e, f});
-    c = max({d, e, f});
-    b = d + e + f - a - c;
-    cout << a << " " << b << " " << c << "\n";
-    if (a + b <= c)
-        cout << "No";
+    vector<ll> v;
+    for (int i = 0; i < 3; i++)
+    {
+        ll tmp;
+        cin >> tmp;
+        v.push_back(tmp);
+    }
+    sort(v.begin(), v.end());
+    for (auto &it : v)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    if (v[0] + v[1] <= v[2])
+    {
+        cout << "No\n";
+    }
     else
     {
-        a *= a;
-        b *= b;
-        c *= c;
-        if (a + b < c)
-            cout << "Obtuse";
-        else if (a + b == c)
-            cout << "Right";
+        if (v[0] * v[0] + v[1] * v[1] == v[2] * v[2])
+        {
+            cout << "Right\n";
+        }
+        else if (v[0] * v[0] + v[1] * v[1] > v[2] * v[2])
+        {
+            cout << "Acute\n";
+        }
         else
-            cout << "Acute";
+        {
+            cout << "Obtuse\n";
+        }
     }
 }
