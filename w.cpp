@@ -1,8 +1,29 @@
-#include <iostream>
-#include <cstdlib>
+#include <bits/stdc++.h>
+
+
+
+
+
+#define SQ(a) (a)*(a)
+
+
+A
+
+
+
 using namespace std;
-int main()
+int main(int argc, char const *argv[])
 {
-    cout << "hello, world" << endl;
+
+
+
+
+    cout << 3+3*3+3 << "\n"; //15
+
+
+
+
+
+
     return 0;
 }
